@@ -2,6 +2,7 @@
 agp = "8.13.2"
 browser = "1.9.0"
 dagger = "2.57.2"
+daggerVersion = "2.51"
 glide = "5.0.5"
 kotlin = "2.0.21"
 coreKtx = "1.17.0"
@@ -28,6 +29,7 @@ compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+dagger-v251 = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

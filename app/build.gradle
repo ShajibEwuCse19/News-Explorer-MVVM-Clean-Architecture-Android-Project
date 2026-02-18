@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -51,7 +52,7 @@ dependencies {
 
     // Glide
     implementation libs.glide
-    annotationProcessor libs.compiler
+    kapt libs.compiler
 
     // Retrofit
     implementation libs.retrofit
@@ -67,10 +68,8 @@ dependencies {
     implementation libs.androidx.lifecycle.runtime.ktx
 
     // Dagger
-//    implementation "com.google.dagger:dagger:2.51"
-//    ksp "com.google.dagger:dagger-compiler:2.51"
-    implementation libs.dagger
-    annotationProcessor libs.dagger.compiler
+    implementation libs.dagger.v251
+    kapt libs.dagger.compiler
 
     // Browser (Custom Tabs)
     implementation libs.androidx.browser
