@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mvvm_using_kotlin.data.repository.TopHeadlineRepository
 import com.example.mvvm_using_kotlin.di.ActivityContext
 import com.example.mvvm_using_kotlin.ui.base.ViewModelProviderFactory
-import com.example.mvvm_using_kotlin.ui.topheadline.TopHeadlineAdapter
-import com.example.mvvm_using_kotlin.ui.topheadline.TopHeadlineViewModel
+import com.example.mvvm_using_kotlin.ui.topheadline.adapter.TopHeadlineAdapter
+import com.example.mvvm_using_kotlin.ui.topheadline.view_model.TopHeadlineViewModel
 import dagger.Module
 import dagger.Provides
 
@@ -27,8 +27,8 @@ class ActivityModule(private val activity: AppCompatActivity) {
     @Provides
     fun provideTopHeadlineViewModel(topHeadlineRepository: TopHeadlineRepository): TopHeadlineViewModel {
         return ViewModelProvider(
-            activity,
-            ViewModelProviderFactory(TopHeadlineViewModel::class) {
+            owner = activity,
+            factory = ViewModelProviderFactory(TopHeadlineViewModel::class) {
                 TopHeadlineViewModel(topHeadlineRepository)
             })[TopHeadlineViewModel::class.java]
     }

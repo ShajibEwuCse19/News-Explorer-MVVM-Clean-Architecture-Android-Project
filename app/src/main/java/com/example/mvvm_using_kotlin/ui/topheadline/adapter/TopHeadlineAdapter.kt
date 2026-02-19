@@ -1,4 +1,4 @@
-package com.example.mvvm_using_kotlin.ui.topheadline
+package com.example.mvvm_using_kotlin.ui.topheadline.adapter
 
 import android.net.Uri
 import android.view.LayoutInflater

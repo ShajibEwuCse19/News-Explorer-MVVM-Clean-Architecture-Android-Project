@@ -15,6 +15,8 @@ import com.example.mvvm_using_kotlin.databinding.ActivityTopHeadlineBinding
 import com.example.mvvm_using_kotlin.di.component.DaggerActivityComponent
 import com.example.mvvm_using_kotlin.di.module.ActivityModule
 import com.example.mvvm_using_kotlin.ui.base.UiState
+import com.example.mvvm_using_kotlin.ui.topheadline.adapter.TopHeadlineAdapter
+import com.example.mvvm_using_kotlin.ui.topheadline.view_model.TopHeadlineViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

@@ -18,8 +18,8 @@ class TopHeadlineRepository @Inject constructor(val networkService: NetworkServi
     fun getTopHeadlines(country: String): Flow<List<Article>> {
         return flow {
             emit(networkService.getTopHeadlines(country))
-        }.map {
-            it.articles
+        }.map { data ->
+            data.articles
         }
     }
 }

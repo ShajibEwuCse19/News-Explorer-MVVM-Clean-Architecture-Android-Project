@@ -1,18 +1,15 @@
-package com.example.mvvm_using_kotlin.ui.topheadline
+package com.example.mvvm_using_kotlin.ui.topheadline.view_model
 
-import android.nfc.Tag
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mvvm_using_kotlin.data.model.Article
 import com.example.mvvm_using_kotlin.data.repository.TopHeadlineRepository
 import com.example.mvvm_using_kotlin.ui.base.UiState
-import com.example.mvvm_using_kotlin.utils.AppConstant.COUNTRY
+import com.example.mvvm_using_kotlin.utils.AppConstant
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
-import kotlin.math.log
 
 /**
  * @author Shajib
@@ -30,12 +27,12 @@ class TopHeadlineViewModel(private val topHeadlineRepository: TopHeadlineReposit
 
     private fun fetchTopHeadlines() {
         viewModelScope.launch {
-            topHeadlineRepository.getTopHeadlines(COUNTRY)
+            topHeadlineRepository.getTopHeadlines(AppConstant.COUNTRY)
                 .catch { e ->
                     _uiState.value = UiState.Error(e.toString())
                 }
-                .collect {
-                    _uiState.value = UiState.Success(it)
+                .collect { articles ->
+                    _uiState.value = UiState.Success(articles)
                 }
         }
     }
