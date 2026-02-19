@@ -28,7 +28,7 @@ class ApplicationModule(private val application: Application) {
 
     @BaseUrl
     @Provides
-    fun provideBaseUrl(): String = "https://newsapi.org/v2/"
+    fun provideBaseUrl(): String = "https://newsapi.org"
 
     @Provides
     @Singleton
